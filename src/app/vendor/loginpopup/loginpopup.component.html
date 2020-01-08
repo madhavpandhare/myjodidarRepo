@@ -1,0 +1,48 @@
+<!-- <h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+  <mat-form-field>
+    <input matInput>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div> -->
+<div class="container">
+    <a class="closeIcon">
+        <span (click)="closeDialog()">X</span>
+    </a>
+    <div class="mainContent">
+        <img src="../../../assets/images/logo-banner.png">
+        <p>Welcome to MyJodidar</p>
+        <form class="example-form" [formGroup]='formGroup' (ngSubmit)="onSubmit(formGroup.value)">
+            <mat-form-field class="example-full-width">
+              <input matInput 
+                placeholder="Mobile Number" 
+                type="text"  
+                formControlName="mobilenumber" 
+                minlength="10" 
+                maxlength="10"
+                (keypress)="onlyNumberKey($event)">
+              <mat-error *ngIf="formGroup.controls['mobilenumber'].invalid && formGroup.controls['mobilenumber'].touched">
+                {{getErrorMobileno()}}
+              </mat-error>
+            </mat-form-field>          
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Password" formControlName="password" minlength="6" type="password">
+                <mat-error *ngIf="formGroup.controls['password'].invalid && formGroup.controls['password'].touched">
+                    {{getErrorPassword()}}
+                  </mat-error>
+              </mat-form-field> 
+              <div class="form-element">
+                <mat-checkbox formControlName="validate" value="1">Remember Me</mat-checkbox>
+                <a href="#">
+                    <mat-label class="floatRight">Forgot Password</mat-label>
+                </a>
+              </div>
+                <button mat-raised-button color="primary" type="submit" class="loginButton" [disabled]="!formGroup.valid">Login</button>
+          </form>
+    </div>
+    <!-- <p>{{formGroup.value | json}}</p> -->
+</div>

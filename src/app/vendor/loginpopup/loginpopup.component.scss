@@ -1,0 +1,50 @@
+.container{
+    .closeIcon{
+        float: right;
+        cursor: pointer;
+        font-size: 15px;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .5;
+    }
+    .mainContent{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 14px;
+        img{
+            margin: 30px 0 30px 0;
+        }
+        p{
+            font-size: 17px;
+            margin-bottom:2.5rem;
+        }
+        .example-form {
+            min-width: 150px;
+            max-width: 500px;
+            width: 100%;
+          }          
+          .example-full-width {
+            width: 100%;
+            margin-bottom: 20px;
+          }
+          .form-element{
+              .floatRight{
+                  float: right;
+                  color: #f06236
+              }
+          }
+          .loginButton{
+            padding: 12px 45px;
+            color: #333;
+            font-size: 16px;
+            // background-color: #f06236;
+            border: none;
+            // border: 1px solid #f06236;
+            display: block;
+            margin: auto;
+            margin-bottom: 25px;
+            margin-top: 25px;
+          }
+    }
+}
